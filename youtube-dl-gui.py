@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Youtube-dl-GUI provides a front-end GUI to youtube-dl
 #    Copyright (C) 2013  Amit Seal Ami
 #
@@ -15,11 +17,7 @@
 #    along with th== program.  If not, see {http://www.gnu.org/licenses/}.
 #
 from PySide.QtGui import QMessageBox
-
-__author__ = 'amit'
-
-from PySide import QtGui\
-    #, QtCore
+from PySide import QtGui
 from ui.main_window import Ui_MainWindow
 import sys
 from os import system

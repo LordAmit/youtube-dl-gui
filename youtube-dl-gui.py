@@ -21,7 +21,6 @@ from PySide import QtGui
 from ui.main_window import Ui_MainWindow
 import sys
 from os import system
-import subprocess
 from urllib2 import urlopen
 from urllib2 import HTTPError
 
@@ -70,9 +69,12 @@ class MyApplication(QtGui.QMainWindow):
             return True
 
     def return_youtube_dl_cmd(self):
+        from os.path import expanduser
+        home = expanduser("~")
         cmd = "gnome-terminal -e "
-        cmd += '"youtube-dl -f{0} -c -o ~/Downloads/%(title)s-%(id)s.%(ext)s {1}"'.format(
+        cmd += '"youtube-dl -f{0} -c -o {1}/Downloads/%(title)s-%(id)s.%(ext)s {2}"'.format(
             self.format_selected,
+            home,
             self.ui.textEditDownload.toPlainText()
         )
         return cmd
